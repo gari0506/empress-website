@@ -18,6 +18,7 @@ $t = [
     'address'     => '7th Ave, Bonifacio High Street, BGC, Taguig',
     'hours'       => 'Open Daily · 11AM – 11PM',
     'btn_call'    => 'Call Us',
+    'btn_menu'    => 'Explore Menu',
     'btn_fb'      => 'Visit Facebook',
     'footer'      => '© %d The Empress Dining Palace. All rights reserved.',
     'loading'     => 'Crafting an Imperial Experience',
@@ -533,7 +534,12 @@ h1 em{
          href="tel:+639155431862">
         <?= $s['btn_call'] ?>
       </a>
+      <a class="btn btn-outline"
+         href="/menu"
+         target="_blank">
+            <?= $s['btn_menu'] ?>
 
+      </a>
       <a class="btn btn-outline"
          href="https://www.facebook.com/empressdiningpalace"
          target="_blank">

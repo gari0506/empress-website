@@ -449,7 +449,11 @@ h1 em{
       <a class="btn btn-gold" href="tel:+639155431862">
         <?= $s['btn_call'] ?>
       </a>
-
+      <a class="btn btn-outline"
+         href="/menu"
+         target="_blank">
+        Explore Menu
+      </a>
       <a class="btn btn-outline"
          href="https://www.facebook.com/empressdiningpalace"
          target="_blank">
