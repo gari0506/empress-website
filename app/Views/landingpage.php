@@ -87,7 +87,8 @@ $s = $t[$lang];
 
 body{
   min-height:100vh;
-  overflow:hidden;
+  overflow-x:hidden;
+  overflow-y:auto;
   background:
     radial-gradient(circle at top left, rgba(245,200,66,.18), transparent 30%),
     radial-gradient(circle at bottom right, rgba(192,48,74,.10), transparent 35%),

@@ -71,10 +71,10 @@ $s = $t[$lang];
   --gold-light:#ffe8a3;
   --cream:#fdf6e8;
 }
-
 body{
   min-height:100vh;
-  overflow:hidden;
+  overflow-x:hidden;
+  overflow-y:auto;
   background:
     radial-gradient(circle at top left, rgba(212,160,23,.12), transparent 35%),
     radial-gradient(circle at bottom right, rgba(212,160,23,.08), transparent 35%),
