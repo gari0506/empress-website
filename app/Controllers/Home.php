@@ -12,4 +12,17 @@ class Home extends BaseController
     {
         return view('indexv2');
     }
+    public function menu(): string
+    {
+        return view('menu');
+    }
+
+    public function landingpage()
+    {
+        return view('landingpage');
+    } 
+    public function landingpagev2()
+    {
+        return view('landingpagev2');
+    }
 }

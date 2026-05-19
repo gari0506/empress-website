@@ -680,7 +680,7 @@ $other_lang_lbl = $s['lang_switch_lbl'];
       </div>
       <div class="mc-foot">
         <span class="mc-note"><?= $s['ac_note'] ?></span>
-        <a class="btn-full" href="empress-menu.php?menu=alacarte&orient=landscape">
+       <a class="btn-full" href="/menu?menu=alacarte&orient=landscape">
           <?= $s['full_view'] ?>
           <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
@@ -704,7 +704,7 @@ $other_lang_lbl = $s['lang_switch_lbl'];
       </div>
       <div class="mc-foot">
         <span class="mc-note"><?= $s['cel_note'] ?></span>
-        <a class="btn-full" href="empress-menu.php?menu=celebrations&orient=portrait">
+        <a class="btn-full" href="/menu?menu=celebrations&orient=portrait">
           <?= $s['full_view'] ?>
           <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
