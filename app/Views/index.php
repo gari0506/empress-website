@@ -58,12 +58,12 @@ $t = [
     'lang_switch_lbl'=> '中文',
     'lang_switch_url'=> '?lang=zh',
     'highlights'     => [
-      ['🦆','Peking Duck',          'Crispy skin, succulent meat, served whole or with steamed pancakes & plum sauce.'],
-      ['🦞','Live Seafood',          'Alaskan King Crab, lobster, and fresh catch — prepared to your preference.'],
-      ['🥟','Dim Sum',               'Steamed, baked, and fried selections from classic siu mai to taro puff.'],
-      ['🐷','Suckling Pig',          'Roasted to golden perfection with irresistibly crispy skin and tender meat.'],
-      ['🦪','Abalone & Sea Cucumber','Premium delicacies slow-braised in rich Cantonese master stock.'],
-      ['🍜','La Mian & Szechuan',    'Hand-pulled noodles and bold, fiery Szechuan specialties.'],
+      ['/pecking-duck.png','Peking Duck',          'Crispy skin, succulent meat, served whole or with steamed pancakes & plum sauce.'],
+      ['/seafood.png','Live Seafood',          'Alaskan King Crab, lobster, and fresh catch — prepared to your preference.'],
+      ['/dumplings.png','Dim Sum',               'Steamed, baked, and fried selections from classic siu mai to taro puff.'],
+      ['/meat-galore.png','Meat Galore',          'The selections in The Empress Meat Galore Menu are reliable favorites with exceptional taste.'],
+      ['/abalone.png','Abalone & Sea Cucumber','Premium delicacies slow-braised in rich Cantonese master stock.'],
+      ['/szenchuan.png','La Mian & Szechuan',    'Hand-pulled noodles and bold, fiery Szechuan specialties.'],
     ],
   ],
   'zh' => [
@@ -118,13 +118,13 @@ $t = [
     'foot_copy'      => '© %d 皇后御膳版權所有。',
     'lang_switch_lbl'=> 'English',
     'lang_switch_url'=> '?lang=en',
-    'highlights'     => [
-      ['🦆','北京烤鴨',      '鴨皮香脆，鴨肉鮮嫩，可整隻上桌或以薄餅捲配梅醬享用。'],
-      ['🦞','現撈海鮮',      '阿拉斯加帝王蟹、龍蝦及新鮮漁獲，按您喜好烹調。'],
-      ['🥟','精緻點心',      '蒸、焗、炸點心任您選——從傳統燒賣到香芋角一應俱全。'],
-      ['🐷','乳豬全體',      '烤至金黃酥脆，外皮香口，肉質鮮嫩，令人垂涎。'],
-      ['🦪','鮑魚·海參',    '頂級食材以濃郁粵式滷汁慢燉，入口即化。'],
-      ['🍜','拉麵·四川菜',  '手拉麵條及濃郁四川辛辣料理，適合喜歡挑戰的您。'],
+    'highlights'     => [ 
+      ['/pecking-duck.png','北京烤鴨',      '鴨皮香脆，鴨肉鮮嫩，可整隻上桌或以薄餅捲配梅醬享用。'],
+      ['/seafood.png','現撈海鮮',      '阿拉斯加帝王蟹、龍蝦及新鮮漁獲，按您喜好烹調。'],
+      ['/dumplings.png','精緻點心',      '蒸、焗、炸點心任您選——從傳統燒賣到香芋角一應俱全。'],
+      ['/meat-galore.png','肉味十足',      '皇后肉食盛宴菜單上的菜色都是備受青睞的經典選擇，口味絕佳。'],
+      ['/abalone.png','鮑魚·海參',    '頂級食材以濃郁粵式滷汁慢燉，入口即化。'],
+      ['/szenchuan.png','拉麵·四川菜',  '手拉麵條及濃郁四川辛辣料理，適合喜歡挑戰的您。'],
     ],
   ],
 ];
@@ -139,7 +139,6 @@ $other_lang_lbl = $s['lang_switch_lbl'];
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title><?= htmlspecialchars($s['page_title']) ?></title>
-  <!-- <link rel="stylesheet" href="https://jsdelivr.net"> -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -186,15 +185,8 @@ $other_lang_lbl = $s['lang_switch_lbl'];
   .topbar-left a { color:rgba(255,255,255,.65); text-decoration:none; transition:color .2s; white-space:nowrap; }
   .topbar-left a:hover { color:var(--yellow-lt); }
   .topbar-right { display:flex; gap:8px; align-items:center; flex-shrink:0; }
-  /* .topbar-right a {
-    width:26px; height:26px; border-radius:50%;
-    border:1px solid rgba(255,255,255,.25);
-    display:flex; align-items:center; justify-content:center;
-    color:rgba(255,255,255,.55); text-decoration:none; font-size:.68rem;
-    transition:background .2s, color .2s, border-color .2s;
-  } */
   .lang-option{
-  width:26px; height:26px; border-radius:50%;
+    width:26px; height:26px; border-radius:50%;
     border:1px solid rgba(255,255,255,.25);
     display:flex; align-items:center; justify-content:center;
     color:rgba(255,255,255,.55); text-decoration:none; font-size:.68rem;
@@ -237,39 +229,18 @@ $other_lang_lbl = $s['lang_switch_lbl'];
 
   .logo { display:flex; align-items:center; gap:11px; text-decoration:none; flex-shrink:0; }
   .logo-icon {
-  width:52px;
-  height:52px;
-  border-radius:50%;
-  background:
-    radial-gradient(circle at 30% 30%, #fff3c4 0%, var(--yellow) 35%, var(--yellow-dk) 100%);
-  border:2px solid rgba(255,255,255,.7);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  position:relative;
-  box-shadow:
-    0 4px 14px rgba(212,168,14,.35),
-    inset 0 1px 4px rgba(255,255,255,.65);
-}
-
-.logo-icon::before {
-  content:'';
-  position:absolute;
-  inset:4px;
-  border-radius:50%;
-  border:1px solid rgba(255,255,255,.45);
-  pointer-events:none;
-}
-
-.logo-icon img {
-  width:68%;
-  height:68%;
-  object-fit:contain;
-  filter:
-    drop-shadow(0 1px 1px rgba(0,0,0,.18))
-    brightness(1.02);
-}
+    width:52px; height:52px; border-radius:50%;
+    background: radial-gradient(circle at 30% 30%, #fff3c4 0%, var(--yellow) 35%, var(--yellow-dk) 100%);
+    border:2px solid rgba(255,255,255,.7);
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden; position:relative;
+    box-shadow: 0 4px 14px rgba(212,168,14,.35), inset 0 1px 4px rgba(255,255,255,.65);
+  }
+  .logo-icon::before {
+    content:''; position:absolute; inset:4px; border-radius:50%;
+    border:1px solid rgba(255,255,255,.45); pointer-events:none;
+  }
+  .logo-icon img { width:68%; height:68%; object-fit:contain; filter:drop-shadow(0 1px 1px rgba(0,0,0,.18)) brightness(1.02); }
   .logo-text { display:flex; flex-direction:column; line-height:1.1; }
   .logo-cn { font-family:'Noto Serif TC',serif; font-size:.7rem; font-weight:500; color:var(--pink); letter-spacing:.22em; }
   .logo-en { font-family:'Playfair Display',serif; font-size:1.08rem; font-weight:700; color:var(--ink); }
@@ -292,6 +263,7 @@ $other_lang_lbl = $s['lang_switch_lbl'];
   .btn-book:hover { background:var(--ink); color:var(--white); }
 
   /* ── HERO ── */
+    /* ── HERO ── */
   .hero {
     margin-top:calc(var(--topbar-h) + var(--hdr-h));
     position:relative; overflow:hidden;
@@ -324,7 +296,8 @@ $other_lang_lbl = $s['lang_switch_lbl'];
   .lemon--1 { right:240px; top:18%; animation-delay:.5s; transform:rotate(-20deg); }
   .lemon--2 { left:220px;  bottom:22%; animation-delay:.55s; transform:rotate(15deg); }
 
-  .hero-content { position:relative; z-index:2; text-align:center; max-width:640px; padding:80px 24px; }
+  /* FIX: reduced top padding so content sits higher */
+  .hero-content { position:relative; z-index:2; text-align:center; max-width:640px; padding:30px 24px 80px; }
 
   .hero-tag {
     display:inline-block; font-family:'Noto Serif TC',serif; font-size:.72rem; font-weight:500;
@@ -341,7 +314,6 @@ $other_lang_lbl = $s['lang_switch_lbl'];
     animation:fadeDown .9s .1s ease both;
   }
   .hero-title em { font-style:italic; color:var(--pink); }
-  /* Chinese hero title uses Noto Serif TC */
   .hero-title-zh {
     font-family:'Noto Serif TC',serif;
     font-size:clamp(2.5rem,6vw,5.5rem); font-weight:700;
@@ -394,7 +366,6 @@ $other_lang_lbl = $s['lang_switch_lbl'];
     color:var(--ink); line-height:1.15; margin-bottom:14px;
   }
   .sec-title em { font-style:italic; color:var(--pink); }
-  /* Chinese section titles */
   .sec-title-zh {
     font-family:'Noto Serif TC',serif;
     font-size:clamp(1.7rem,3vw,2.5rem); font-weight:700;
@@ -402,7 +373,6 @@ $other_lang_lbl = $s['lang_switch_lbl'];
   }
   .sec-title-zh em { font-style:normal; color:var(--pink); }
   .sec-desc { font-family:'Noto Serif TC',serif; font-size:.98rem; color:var(--muted); line-height:1.85; max-width:540px; margin:0 auto; }
-
   /* ── HIGHLIGHTS ── */
   #highlights {
     background:var(--yellow);
@@ -413,20 +383,55 @@ $other_lang_lbl = $s['lang_switch_lbl'];
   #highlights .sec-desc { color:rgba(30,20,0,.65); }
 
   .highlights-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px; max-width:1100px; margin:0 auto; }
+
+  /* Full-bleed card: image fills entire card, text overlaid at bottom */
   .h-card {
-    background:var(--white); border-radius:16px; padding:30px 26px;
-    box-shadow:0 4px 24px rgba(0,0,0,.08); position:relative; overflow:hidden;
+    border-radius:16px; overflow:hidden;
+    box-shadow:0 4px 24px rgba(0,0,0,.12); position:relative;
     transition:transform .3s, box-shadow .3s;
+    aspect-ratio:4/3;
+    min-height:260px;
   }
-  .h-card:hover { transform:translateY(-5px); box-shadow:0 10px 36px rgba(0,0,0,.13); }
+  .h-card:hover { transform:translateY(-5px); box-shadow:0 12px 40px rgba(0,0,0,.22); }
+
+  /* Full-bleed background image */
+  .h-img-wrap {
+    position:absolute; inset:0;
+  }
+  .h-img-wrap img {
+    width:100%; height:100%; object-fit:cover; display:block;
+    transition:transform .5s ease;
+  }
+  .h-card:hover .h-img-wrap img { transform:scale(1.07); }
+
+  /* Gradient overlay — darkens bottom for text legibility, adjust stops to taste */
+  .h-img-wrap::after {
+    content:'';
+    position:absolute; inset:0;
+    background:linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.08) 0%,
+      rgba(0,0,0,0.28) 45%,
+      rgba(0,0,0,0.72) 100%
+    );
+    pointer-events:none;
+  }
+
+  /* Text sits above the overlay */
+  .h-body {
+    position:absolute; bottom:0; left:0; right:0;
+    padding:22px 22px 24px;
+    z-index:2;
+  }
   .h-card::after {
-    content:attr(data-n); position:absolute; bottom:10px; right:16px;
-    font-family:'Playfair Display',serif; font-size:3.8rem; font-weight:700;
-    color:rgba(245,200,66,.18); line-height:1; pointer-events:none;
+    content:attr(data-n);
+    position:absolute; top:12px; right:16px;
+    font-family:'Playfair Display',serif; font-size:3rem; font-weight:700;
+    color:rgba(255,255,255,.18); line-height:1; pointer-events:none;
+    z-index:3;
   }
-  .h-icon { font-size:2.2rem; margin-bottom:14px; display:block; }
-  .h-title { font-family:'Noto Serif TC',serif; font-size:1.05rem; font-weight:600; color:var(--ink); margin-bottom:8px; }
-  .h-desc  { font-family:'Noto Serif TC',serif; font-size:.88rem; color:var(--muted); line-height:1.75; }
+  .h-title { font-family:'Noto Serif TC',serif; font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:6px; text-shadow:0 1px 4px rgba(0,0,0,.4); }
+  .h-desc  { font-family:'Noto Serif TC',serif; font-size:.84rem; color:rgba(255,255,255,.82); line-height:1.7; text-shadow:0 1px 3px rgba(0,0,0,.35); }
 
   /* ── MENUS ── */
   #menus { background:var(--white); }
@@ -450,7 +455,7 @@ $other_lang_lbl = $s['lang_switch_lbl'];
   .mc-tag::after { content:''; flex:1; height:1px; background:rgba(0,0,0,.08); }
   .mc-title { font-family:'Noto Serif TC',serif; font-size:clamp(1.1rem,2vw,1.45rem); font-weight:700; color:var(--ink); line-height:1.25; margin-bottom:4px; }
   .mc-cn    { font-family:'Noto Serif TC',serif; font-size:.82rem; font-weight:300; color:var(--pink); letter-spacing:.14em; display:block; margin-bottom:2px; }
-  .mc-desc  { font-family:'Noto Serif TC',serif; font-size:.88rem; color:var(--muted); line-height:1.75; padding:12px 24px 14px; height:120px}
+  .mc-desc  { font-family:'Noto Serif TC',serif; font-size:.88rem; color:var(--muted); line-height:1.75; padding:12px 24px 14px; height:120px; }
   .mc-pills { display:flex; flex-wrap:wrap; gap:7px; padding:0 24px 16px; }
   .pill {
     font-family:'Noto Serif TC',serif; font-size:.65rem; font-weight:500; letter-spacing:.06em;
@@ -562,23 +567,18 @@ $other_lang_lbl = $s['lang_switch_lbl'];
     <a href="mailto:reservations@empressdiningpalace.com"><?= $s['topbar_email'] ?></a>
   </div>
   <div class="topbar-right">
-    <!-- Language switcher -->
     <div class="lang-switcher">
       <a href="?lang=en" class="lang-option lang-btn <?= $lang==='en'?'active':'' ?>">EN</a>
       <a href="?lang=zh" class="lang-option lang-btn <?= $lang==='zh'?'active':'' ?>">中文</a>
     </div>
-    <a class ="soc-media" href="https://www.facebook.com/empressdiningpalace" target= "_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
-    <a class ="soc-media" href="https://www.instagram.com/empressdiningpalace/" target= "_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
-    <!-- <a href="#" title="Twitter">✗</a> -->
+    <a class="soc-media" href="https://www.facebook.com/empressdiningpalace" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+    <a class="soc-media" href="https://www.instagram.com/empressdiningpalace/" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
   </div>
 </div>
 
 <!-- ══════ HEADER ══════ -->
 <header id="hdr">
   <a class="logo" href="?lang=<?= $lang ?>">
-    <!-- <div class="logo-icon">
-      <img src="/public/img/logo.png" alt="The Empress Dining Palace Logo">
-    </div> -->
     <div class="logo-text">
       <span class="logo-cn"><?= $s['logo_sub'] ?></span>
       <span class="logo-en"><?= $s['logo_name'] ?></span>
@@ -597,13 +597,12 @@ $other_lang_lbl = $s['lang_switch_lbl'];
 
 <!-- ══════ HERO ══════ -->
 <section class="hero" id="home">
-  <!-- <div class="food-circle fc-1">🥟</div>
-  <div class="food-circle fc-2">🍜</div>
-  <div class="food-circle fc-3">🦆</div>
-  <div class="food-circle fc-4">🦞</div>
-  <div class="lemon lemon--1">🍋</div>
-  <div class="lemon lemon--2">🍋</div> -->
-
+    <div class="food-circle fc-1"><img src="img/dumplings.png"></div>
+  <div class="food-circle fc-2"><img src="img/meat-galore.png"></div>
+  <div class="food-circle fc-3"><img src="img/pecking-duck.png"></div>
+  <div class="food-circle fc-4"><img  src="img/abalone.png"></div>
+  <div class="lemon lemon--1"><img src="img/szenchuan.png"></div>
+  <div class="lemon lemon--2"><img src="img/szenchuan.png"></div>
   <div class="hero-content">
     <span class="hero-tag"><?= $s['hero_tag'] ?></span>
 
@@ -637,11 +636,16 @@ $other_lang_lbl = $s['lang_switch_lbl'];
   </div>
 
   <div class="highlights-grid">
-    <?php foreach($s['highlights'] as $i => [$icon,$title,$desc]): ?>
+    <?php foreach($s['highlights'] as $i => [$icon, $title, $desc]): ?>
     <div class="h-card" data-n="<?= str_pad($i+1,2,'0',STR_PAD_LEFT) ?>">
-      <span class="h-icon"><?= $icon ?></span>
-      <div class="h-title"><?= $title ?></div>
-      <p class="h-desc"><?= $desc ?></p>
+      <!-- FIX: proper <img> with dimming overlay via .h-img-wrap::after -->
+      <div class="h-img-wrap">
+        <img src="/img<?= $icon ?>" alt="<?= htmlspecialchars($title) ?>">
+      </div>
+      <div class="h-body">
+        <div class="h-title"><?= $title ?></div>
+        <p class="h-desc"><?= $desc ?></p>
+      </div>
     </div>
     <?php endforeach; ?>
   </div>
@@ -680,7 +684,7 @@ $other_lang_lbl = $s['lang_switch_lbl'];
       </div>
       <div class="mc-foot">
         <span class="mc-note"><?= $s['ac_note'] ?></span>
-       <a class="btn-full" href="/menu?menu=alacarte&orient=landscape">
+        <a class="btn-full" href="/menu?menu=alacarte&orient=landscape">
           <?= $s['full_view'] ?>
           <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
