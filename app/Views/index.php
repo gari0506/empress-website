@@ -601,7 +601,7 @@ $other_lang_lbl = $s['lang_switch_lbl'];
   <div class="food-circle fc-2"><img src="img/meat-galore.png"></div>
   <div class="food-circle fc-3"><img src="img/pecking-duck.png"></div>
   <div class="food-circle fc-4"><img  src="img/abalone.png"></div>
-  <div class="lemon lemon--1"><img src="img/szenchuan.png"></div>
+  <div class="lemon lemon--1"><img src="img/seafood.png"></div>
   <div class="lemon lemon--2"><img src="img/szenchuan.png"></div>
   <div class="hero-content">
     <span class="hero-tag"><?= $s['hero_tag'] ?></span>
